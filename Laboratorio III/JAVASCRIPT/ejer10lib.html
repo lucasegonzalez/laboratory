@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 10 del libro</title>
+</head>
+<body>
+	<h1>Ejercicio 10 del libro</h1>
+	<form action="asdasd.php" method="get" id="form">
+		<label for="fecha">Fecha dd/mm/yyyy</label>
+		<input type="text" name="asd"/>
+		<br>
+		<input type="submit" name="asd" value="Enviar">
+	</form>
+	<script>
+		"use strict"
+		document.getElementById("form").onsubmit = enviar;
+
+		function enviar(){
+			var fech = document.getElementById("fecha").value;
+			var dia = substr(0,2);
+			var mes = substr(3,2);
+			var anio = substr(6,4);
+			var fechan = anio +"-"+mes+"-"+dia;
+			return fechan;
+		} 
+	</script>
+
+</body>
+</html>

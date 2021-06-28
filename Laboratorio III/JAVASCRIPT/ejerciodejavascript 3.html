@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio de javascript 3</title>
+	<style type="text/css"></style>
+</head>
+<body>
+	<form action="sub.php" method="get" id="formu">
+
+		<label for="sexom">Persona fisica</label>
+		<input type="radio" name="asdas"  id="pfisca"/>
+		<br/>
+		<label for="sexof">Persona juridica</label>
+		<input type="radio" name="asdas"  id="pjuridica"/>
+		<br/>
+
+		<div id="fisica">
+		<label>CUIL</label>
+		<input type="text" name="asdas" id="cuil"/>
+		<br/>
+		<label for="hombre">Hombre</label>
+		<input type="radio" name="asdas" id="hombre"/>
+		<br/>
+		<label for="mujer">Mujer</label>
+		<input type="radio" name="asdas" id="mujer" />
+		<br/>
+		<input type="submit" name="asdsd" value="Enviar"/>
+		<br/>
+		</div>
+
+		<div id="juridica">
+		<label>CUIT</label>
+		<input type="text" name="asdasd" id="cuit">
+		<br/>
+		<label>Domicilio</label>
+		<input type="text" name="asdasd" id="domi">
+		<br/>
+		<input type="submit" name="asdsd" value="Enviar">
+		</div>
+	
+			
+	</form>
+	<script>
+		"use strict"
+		document.getElementById("fisica").style.display = "none";
+		document.getElementById("juridica").style.display = "none";
+
+		function personaf() {
+			document.getElementById("fisica").style.display = "block";
+			document.getElementById("juridica").style.display = "none";
+
+		}
+		function personaj(){
+			document.getElementById("juridica").style.display = "block";
+			document.getElementById("fisica").style.display = "none";
+
+		}
+
+		function persona(){
+			var cuil = document.getElementById("cuil").value;
+			var cuit = document.getElementById("cuit").value;
+			if (cuil.length != 13){
+				alert("Ingrese correctamente el CUIL xx-xxxxxxxx-x");
+				return false;
+			}
+			if (cuil.substr(2,1) != "-" || cuil.substr(11,1) != "-"){
+				alert("guionIngrese correctamente el CUIL xx-xxxxxxxx-x");
+				return false;
+			}
+			if ( cuil.substr(0,2) == 27 && document.getElementById("hombre").checked) {	
+				alert("El CUIL no coincide con el sexo seleccionado");
+				return false;
+			}
+			if ( cuil.substr(0,2) == 20 && document.getElementById("mujer").checked) {
+				alert("El CUIL no coincide con el sexo seleccionado");
+				return false;
+			}
+			//IF PARA CUIT
+			if (cuit.length != 13){
+				alert("ingres correctamente el CUIT xx-xxxxxxxx-x");
+				return false;
+			}
+			if (cuit.substr(2,1) != "-" || cuit.substr(11,1) != "-"){
+				alert("Ingrese correctamente el CUIT xx-xxxxxxxx-x");
+				return false;
+			}
+			if (cuit.substr(0,2) != 30 ){
+				alert("Ingrese correctamente el CUIT");
+				return false;
+			}
+
+
+		}
+		
+		document.getElementById("pfisca").onclick = personaf ;
+		document.getElementById("pjuridica").onclick = personaj ;
+		document.getElementById("formu").onsubmit = persona ;
+
+	</script>
+
+</body>
+</html>

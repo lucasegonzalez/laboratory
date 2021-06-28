@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejercicio N°6 del Libro</title>
+	</head>
+	<body>
+		<label>Fecha N°1</label>
+		<input type="text" id="anio1"/>
+		<br/>
+		<label>Fecha N°2</label>		
+		<input type="text" id="anio2"/>
+		<br/>
+		<input type="button" id="boton" value="Calcular" i/>
+		
+		<script>
+			
+			document.getElementById("boton").onclick = calcu;
+			
+			function calcu() {
+				var anio1 = document.getElementById("anio1").value;
+				var anio2 = document.getElementById("anio2").value;
+				var dia = 29;
+				var mes = 1 ; 
+				var fecha = new Date (anio1,mes,dia);
+				var contador = 0;
+				while (anio1 <= anio2){
+					if(fecha.getDate() == 29 && mes == 1){
+						contador++
+					}
+
+					anio1++;
+					var fecha = new Date (anio1,mes,dia);
+				}
+				alert(contador);
+
+			}
+			
+		</script>
+
+	</body>
+</html>

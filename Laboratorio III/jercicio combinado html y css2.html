@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TABLA</title>
+	<style>	
+		.borde{border: 1px solid black;}
+		#seccion{background: blue;
+				 color: white;
+				 text-align: left;}
+		#fila3 ,#celda2010,#celda7800{background: yellow;}
+		#celda7800{border:2px solid red;
+				   font-weight: bold;
+				   color:red;}
+		#seccion2{background: red;
+				  color:white;
+				  font-weight: normal}
+		#total{border:2px solid black;
+			   font-weight: bold;}
+		#iv,#ma{color:grey;}
+		
+
+	</style>
+</head>
+<body>
+<table>
+	<tr id="seccion">
+		<th class="borde" > Año</th><th class="borde">Ventas($)</th>
+	</tr>
+	<tr>
+		<td class="borde">2007</td><td class="borde">3500</td>
+	</tr>
+	<tr id="fila3">	
+		<td class="borde">2008</td><td class="borde">4200</td>
+	</tr>	
+	<tr>
+		<td class="borde">2009</td><td class="borde">5600</td>
+	</tr>
+	<tr>
+		<td class="borde" id="celda2010">2010</td><td class="borde" id="celda7800">7800</td>
+	</tr>
+	<tr>
+		<td class="borde" >2011</td><td class="borde">6100</td>
+	</tr>
+	<tr>
+		<th class="borde" id="seccion2" colspan="2">Total</th>
+	</tr>
+	<tr>
+		<td class="borde" id="total" rowspan="2">$ 27200</td><td class="borde" id="ma">mas</td>
+	</tr>
+	<tr>
+		<td class="borde" id="iv">iva</td>
+	</tr>
+	
+</table>
+</body>
+</html>

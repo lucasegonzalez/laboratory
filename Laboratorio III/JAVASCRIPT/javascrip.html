@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prueba de Javascript</title>
+
+	
+</head>
+<body>
+	<input type="text" name="dsdsd" id="dia"/>
+	<input type="button" id="calcular" value="Calcular">
+
+	<script>
+		"use strict" // pasarse a modo estricto
+		//esto es un comentario no se puede tener etiquetas <p>
+		//aler("esto es un texto de prueba");
+		//var i = 3;//en tiempo de ejecucion se puede cambiar el tipo de la variable y la el tipo se ven en tiempo de ejecuccion
+		//i = 3; //opcionales declararlas
+		//i ="dfasfdas";
+		//var i = "3"
+		//i = true;
+		//alert(typeof i);
+		/*function prueba2 (y){
+			var xx = y(40);
+			alert(xx);
+		}
+	
+		/*function prueba(x){//va el nombre de la variable pero no el tipo
+			var i = 20 + parseInt(x);
+			return i;
+
+		}
+
+		var prueba = function (x){//va el nombre de la variable pero no el tipo
+			var i = 20 + parseInt(x);
+			return i;
+
+		}
+
+		
+		var zz = prueba;
+		alert(prueba2(prueba))	
+		//alert(zz("7667")); //llamada a funcion;*/
+		function edad() {
+			var x = document.getElementById("dia").value;
+			x = x * 2;
+			alert(x);
+		}
+		
+
+		document.getElementById("calcular").onclick = edad;
+
+	</script> 
+</body>
+</html>

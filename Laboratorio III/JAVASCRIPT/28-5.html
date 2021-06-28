@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prueba de Javascript</title>
+</head>
+<body>
+	<input type="text" id="fecha"/>
+	<input type="button" value="Calcular" id="boton"/>
+	<script>
+		document.getElementById("boton").onclick = prueba;
+		function prueba() {
+			var fecha = document.getElementById("fecha").value;
+			var dia = fecha.substr(0,2);
+			var mes = fecha.substr(3,2);
+			var anio = fecha.substr(6,4);
+
+			var fechaprueba = new Date(anio,mes-1 , dia); // se puede restar no sumar ojo con el mes siempre marca uno menos
+			if(dia = fechaprueba.getDay() && (mes-1) == fechaprueba.getMonth() && anio == fechaprueba.getFullYear()){
+				alert("fecha ok");
+			}
+			else{
+				alert("fecha mal");
+			}
+		}
+
+
+		
+		/*var fecha = new Date(2012,1,29);//corije no da una fecha invalida "new Date(2012,0,35)"
+		alert(fecha);
+		alert(fecha.getMonth());*/
+	</script>
+
+</body>
+</html>

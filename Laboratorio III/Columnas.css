@@ -1,0 +1,7 @@
+div {
+			border:1px solid blue;
+			width: 20%;
+			float: left;}/*right quedan a la derecha y cambia el orden*/
+		div#main {
+			width: 59%;
+		}

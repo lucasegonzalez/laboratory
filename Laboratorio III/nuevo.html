@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Prueba de formularios</title>
+	</head>
+
+	<body>
+
+		<form method="get" action="cualquiercosa.php">
+			<label for="pepito">Email:</label>
+			<input type="text" name="email" id="pepito" />
+
+			<br/>
+			<label for="clave">Contraseña</label>	
+			<input type="password" name="pwd" id="clave">
+
+			<br/>
+			<label for="acep">Acepta las condiciones?</label>	
+			<input type="checkbox" name="acepta" value="SI" id="acep" />	
+
+			<br/>
+			<label for="sexoM">Masculino</label>
+			<input type="radio" name="sexo" value="M" id="sexoM" />
+			<label for="sexoF">Femenino</label>
+			<input type="radio" name="sexo" value="F" id="sexoF" />
+
+			<br/>
+			<select name="pais">
+				<option value="54">Argentina</option>
+				<option value="55">Brasil</option>
+				<option value="56">Chile</option>
+			</select>
+
+			<br/>
+			<textarea name="observaciones"></textarea>
+			<input type="hidden" name="codigo" value="54654654654654">
+
+			<br/>
+			<input type="submit" />
+
+		</form>
+
+	</body>
+</html>
+

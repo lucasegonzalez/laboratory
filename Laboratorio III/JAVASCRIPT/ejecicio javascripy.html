@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio de Javascript</title>
+</head>
+<body>
+	<h1>Usted es mayor de edad?</h1>
+	<p><strong>Ingrese su fecha de nacimiento y descubralo....</strong></p>
+	<p id="mensajes"></p>
+	<label for="dia">Dia </label>
+	<input type="text" name="dsdsd" id="dia"/>	
+	<br/>
+	<label for="mes">Mes</label>
+	<input type="text" name="dsdsd" id="mes">
+	<br/>
+	<label for="año">A&ntilde;o</label>
+	<input type="text" name="fdsd" id="año">
+	<input type="button" id="calcular" value="Calcular">
+	<script>
+		"use strict"
+		function edad() {
+		var d = document.getElementById("dia").value;
+		var m = document.getElementById("mes").value;
+		var ano = document.getElementById("año").value;
+		
+		var dt = new Date();
+		var month = dt.getMonth()+1;
+		var day = dt.getDate();
+		var year = dt.getFullYear();
+
+		if (year-ano >= 18) {
+			if (year-ano > 18) {
+					 es_mayor ();
+				}
+			if (year-ano == 18) {
+				if(m > month){
+					 es_menor ();
+				}	
+				if (m < month){
+					 es_mayor ();
+				}			
+				if(m == month){
+					if (d <= day ) {
+						 es_mayor ();
+					}
+					else  es_menor ();
+				}				
+				}
+							
+			}
+			 else es_menor ();
+			}
+			
+		function es_mayor (){
+			//alert("es mayor de edad");
+			document.getElementById("mensajes").style.display = "block";
+			document.getElementById("mensajes").innerHTML = "es mayor de edad";// a travez del id en el parrafo escribo un msj en la pagina
+			document.getElementById("mensajes").style.color = "blue";
+			document.getElementById("mensajes").style.fontSize = "9pt";
+		}
+		function es_menor (){
+			//alert ("es menor de edad");
+			document.getElementById("mensajes").style.display = "block";
+			document.getElementById("mensajes").innerHTML = "es menor de edad";
+			document.getElementById("mensajes").style.color = "red";
+			document.getElementById("mensajes").style.fontSize = "20pt"; // acca font-size no lleva guion en el medio por que no es css
+		}
+		var i = 0 ;	
+		function ocultar (){
+			console.log("ocultando" + i ++); //para ver que va pansandoo en la consola
+			document.getElementById("mensajes").style.display = "none";
+		}
+
+		document.getElementById("calcular").onclick = edad;
+		document.getElementById("dia").onfocus = ocultar;
+		document.getElementById("mes").onfocus = ocultar;
+		document.getElementById("año").onfocus = ocultar;
+		
+
+
+		
+		
+	</script>
+	
+
+
+</body>
+</html>

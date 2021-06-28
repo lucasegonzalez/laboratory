@@ -1,0 +1,29 @@
+ul{
+	/*border: 1px solid black;*/
+	list-style-type: none;
+	padding: 0;
+	font-family: Verdana;
+}
+
+li{
+	/*border: 1px solid green;*/
+	width: 150px;
+	float: left;
+	margin-right: 20px;
+	background-color: red; 
+	text-align: center;
+}
+
+a{
+	/*border: 1px solid violet;*/
+	text-decoration: none;
+	color: yellow;
+	display: block;
+	padding:10px;
+}
+
+li:hover{
+	background-color: rgb(255,100,0);
+	box-shadow: 3px 3px 10px orange;
+
+}

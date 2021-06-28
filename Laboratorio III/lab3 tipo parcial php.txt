@@ -1,0 +1,59 @@
+
+ATENCION: la ESTRUCTURA (forma) de los arrays dados no puede modificarse.
+Pero sí debe seguir funcionando el programa que desarrolle al cambiar los
+datos contenidos en los arrays.
+
+-----------------------------------------
+
+
+1)  Dados los siguientes arrays:
+
+$materias = array (1=>"Algebra", 2=>"Analisis", 3=>"Programacion", 
+					4=>"Contabilidad", 5=>"Etica");
+
+$alumnos = array(20=>"Pepe", 22=>"Paco", 24=>"Lola", 70=>"Roberto");
+
+//en "calif": clave es código de materia y valor es nota final
+$notas = array();
+$notas[] = array("alumno"=>22, "calif"=>array(1=>8, 2=>6));  
+$notas[] = array("alumno"=>24, "calif "=>array(1=>6, 2=>7, 3=>10, 5=>7, 4=>6));  
+$notas[] = array("alumno"=>20, "calif "=>array(1=>10, 3=>10));  
+$notas[] = array("alumno"=>70, "calif "=>array(1=>7, 2=>7, 3=>7, 4=>2, 5=>2));  
+
+
+Hacer un script que, al ingresar, muestre los nombres de los alumnos 
+que hayan aprobado todas las materias (para los arrays dados es Lola solamente).
+
+Notar que no hay formularios ni recargas de página. Ni bien se ingresa 
+al programa se ve el resultado, nada más.
+
+
+-----------------------------------------
+
+
+
+2) Se dispone de los siguientes arrays:
+
+$hoteles = array( 341 => "Hilton", 99 => "Sheraton" );
+$habitaciones = array( 11 => "Simple", 62 => "Doble", 78 => "Triple");
+
+
+//en la clave "libres" tenemos la cantidad de habitaciones disponibles para cada tipo
+$datos = array();
+$datos[] = array("hotel" => 341 , "libres" => array(11=>0, 62=>4, 78=>2) , "dia"=>4, "mes"=>12);
+$datos[] = array("hotel" => 341 , "libres" => array(11=>2, 62=>2, 78=>0) , "dia"=>5, "mes"=>12);
+$datos[] = array("hotel" => 341 , "libres" => array(11=>6, 62=>10, 78=>3) , "dia"=>6, "mes"=>12);
+$datos[] = array("hotel" => 99  , "libres" => array(62=>10, 11=>3) , "dia"=>6, "mes"=>12);
+
+
+Se desea presentar al usuario un formulario donde elegirá:
+- tipo de habitación (un select con los tipos existentes en el array)
+- cantidad de habitaciones (un select de 1 a 5)
+- dia de la reserva (un select de 1 a 31)
+- mes de la reserva (un select de 1 a 12)
+
+Al hacer submit se deben indicar los nombres de los hoteles donde hay disponibilidad 
+según los datos elegidos.
+
+Si no se encuentra información en el array de datos para el día solicitado se supone 
+que NO existe disponibilidad en ningún hotel.

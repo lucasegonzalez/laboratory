@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>no title</title>
+</head>
+<body>
+<select id="mes">
+	<option value="0">Enero</option>
+	<option value="1">Febrero</option>
+	<option value="2">Marzo</option>
+	<option value="3">Abril</option>
+	<option value="4">Mayo</option>
+	<option value="5">Junio</option>
+	<option value="6">Julio</option>
+	<option value="7">Agosto</option>
+	<option value="8">Septiembre</option>
+	<option value="9">Octubre</option>
+	<option value="10"">Noviembre</option>
+	<option value="11"">Diciembre</option>
+</select>
+<br>
+<input type="button" value="Seleccionar" id="crear">
+<br>
+<div id="calendario"></div>
+
+<script>
+"use strict"
+
+document.getElementById("crear").onclick = dibujar;
+
+function dibujar(){
+	var fecha = new Date();
+	var tabla = document.createElement("table");
+	var th = document.createElement("th");
+	var mes = parseInt(document.getElementById("mes").value);
+	var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+	
+	tabla.style.border = " 1px solid black";
+	th.setAttribute("colspan" , "7");
+	th.style.border = " 1px solid black";
+	th.innerHTML= meses[mes] + " del 2018" ;
+	var tr = document.createElement("tr");
+	tr.appendChild(th);
+	tabla.appendChild(tr);
+//INTERFAZ DE DIAS
+	var dias_S=["Do","Lu","Ma","Mi","Ju", "Vi", "Sa"];
+	var i=0;
+	tr = document.createElement("tr");
+	th = document.createElement("th");
+	while(i<=6){
+		th.innerHTML = dias_S[i];
+		th.style.border ="1px solid black";
+		tr.appendChild(th);
+		th = document.createElement("th");
+		i++;
+	}
+	tabla.appendChild(tr);
+ 	fecha = new Date(2018, mes , 1);
+ 	var ULT=0;
+ 	while(fecha.getMonth() == mes){
+ 		ULT++;
+ 		fecha = new Date(2018,mes,1+ULT);
+ 	}
+	var j=0;
+ 	fecha = new Date(2018, mes , 1);
+	var PRI = fecha.getDay();
+ 	tr=document.createElement("tr");
+ 	var td;
+ 	if (j!=PRI){
+ 	while(j!=PRI){
+			td = document.createElement("td");
+			td.style.border ="1px solid black";
+			tr.appendChild(td);
+			j++;
+ 		}
+ 	}
+	i=1;
+	while(i<=ULT){
+ 		if(j==7){
+ 			j=0;
+ 			tabla.appendChild(tr);
+ 			tr=document.createElement("tr");
+ 		}
+ 		td = document.createElement("td");
+ 		td.innerHTML = fecha.getDate();
+ 		td.style.border ="1px solid black";
+ 		tr.appendChild(td);
+ 		fecha = new Date(2018, mes, 1+i);
+ 		j++;
+ 		i++;
+	}
+	if (j!=7){
+ 	while(j!=7){
+			td = document.createElement("td");
+			td.style.border ="1px solid black";
+			tr.appendChild(td);
+			j++;
+ 		}
+ 	}
+	tabla.appendChild(tr);
+	document.getElementById("calendario").appendChild(tabla);
+}
+</script>
+</body>
+</html>

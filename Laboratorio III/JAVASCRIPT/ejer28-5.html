@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejercicio de javascript</title>
+		<style>
+			.impares{
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="Calcular" id="boton"/>
+		<div id="mensaje"></div>
+
+		<script>
+			document.getElementById("boton").onclick = Calcu;
+
+			function Calcu() {
+				var A = 0;
+				var dia = 1;
+				var mes = 0;
+				var anio = 2018;
+				var fecha = new Date (anio,mes,dia);
+				//alert(fecha);
+				while (A != 5){
+						//fecha = new Date(anio-I,mes,dia);				
+						
+						if(fecha.getDay() == 1){
+							var pnuevo = document.createElement("p");
+							if(A % 2 == 0)pnuevo.setAttribute("class","impares");
+							var anuevo = document.createElement("a");
+							anuevo.innerHTML = fecha;
+							anuevo.setAttribute("href","https://es.wikipedia.org/wiki/"+anio);
+							anuevo.setAttribute("id","anio"+anio);
+							pnuevo.appendChild(anuevo);
+							document.getElementById("mensaje").appendChild(pnuevo);
+							//document.getElementById("mensaje").innerHTML +="<br/>" + fecha;
+							A++;						
+						}					
+						anio--;
+						var fecha = new Date (anio,mes,dia);
+					
+				}
+			}
+			
+		</script>
+
+
+	</body>
+</html>

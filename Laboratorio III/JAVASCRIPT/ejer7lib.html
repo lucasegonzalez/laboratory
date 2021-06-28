@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>EJERCICIO 7 DEL LIBRO</title>
+</head>
+<body>
+	<h1>Ejercicio 7 del libro</h1>
+	<h2>Ingrese 2 fechas para saber la cantidad de dias entre ambas</h2>
+	<label for="fecha1">Ingrese la fecha desde xx/xx/xxxx</label>
+	<input type="text" name="asda" id="fecha1"/>
+	<br>
+	<label for="fecha2">Ingrese la fecha hasta xx/xx/xxxx</label>
+	<input type="text" name="adsda" id="fecha2"/>
+	<br>
+	<input type="button" name="asda" id="calcu" value="Calcular" />
+	<div id="cajita"></div>
+	<script>
+		document.getElementById("calcu").onclick = contar;
+		document.getElementById("fecha1").onfocus = ocul;
+		document.getElementById("fecha2").onfocus = ocul;
+
+		function ocul () {
+			document.getElementById("cajita").style.display = "none";
+		}
+
+		function contar (){
+			var fecha1 = document.getElementById("fecha1").value;
+			var fecha2 = document.getElementById("fecha2").value;
+			var dia1 = parseInt(fecha1.substr(0,2));
+			var dia2 = parseInt(fecha2.substr(0,2));
+			var mes1 = parseInt(fecha1.substr(3,2));
+			var mes2 = parseInt(fecha2.substr(3,2));
+			var anio1 = parseInt(fecha1.substr(6,4));
+			var anio2 = parseInt(fecha2.substr(6,4));
+			var fechainicio = new Date( anio1 , mes1 - 1 , dia1);
+			var fechafin = new Date(anio2 , mes2 - 1 , dia2 );
+			
+			var I = 0;
+			while (fechainicio.getFullYear() != fechafin.getFullYear() || fechainicio.getMonth() != fechafin.getMonth() || fechainicio.getDate() != fechafin.getDate()){				
+				I++;
+				fechainicio = new Date (anio1, mes1 - 1 , dia1 + I);
+			}
+			document.getElementById("cajita").style.display = "block";
+			document.getElementById("cajita").innerHTML = "Desde el" + fecha1 + " hasta la " + fecha2 + " pasaron " + I + " dias!!!";
+		}
+		
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EJERCICIO 5 DEL LIBRO</title>
+</head>
+<body>
+	<H1>Ejerciocio 5 de libro</H1>
+	<label for="anio">ingrese su fecha de nacimiento xx/xx/xxxx</label>
+	<input type="text" id="fecha"/>
+	<br/>
+	<input type="button" id="calcula" value="Calcular">
+
+	<script>
+		"use strict"
+		document.getElementById("calcula").onclick = calcular;
+		function calcular(){
+			var fecha1 = document.getElementById("fecha").value;
+			var dia = fecha1.substr(0,2);
+			var mes = fecha1.substr(3,2);
+			var anio = fecha1.substr(6,4);
+			var fechaprueba = new Date (anio,mes-1,dia);
+			var dia = fechaprueba.getDay();
+			if (dia == 0 ){
+				alert("Usted nacio un DOMINGO");
+			}
+			if (dia == 1 ){
+				alert("Usted nacio un LUNES");
+			}
+			if (dia == 2 ){
+				alert("Usted nacio un MARTES");
+			}
+			if (dia == 3 ){
+				alert("Usted nacio un MIERCOLES")
+			}
+			if (dia == 4 ){
+				alert("Usted nacio un JUEVES");
+			}
+			if (dia == 5 ){
+				alert("Usted nacio un VIERNES");
+			}
+			if (dia == 6 ){
+				alert("Usted nacio un SABADO");
+			}
+		}
+	</script>
+
+</body>
+</html>

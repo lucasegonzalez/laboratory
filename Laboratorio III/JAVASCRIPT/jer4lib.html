@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Ejercicio 4 del libro</title>
+</head>
+<body>
+<h1>EJERCICIO 4 DEL LIBRO</h1>
+	<form action="cual.php" method="get" id="form" >
+		<label for="nom">Nombre</label>
+		<input type="text" name="affas" id="nom"/>
+		<br/>
+		<label for="ape">Apellido</label>
+		<input type="text" name="affas" id="ape"/>
+		<br/>
+		<label for="ema">Email</label>
+		<input type="text" name="affas" id="ema"/>
+		<br>
+		<input type="submit" name="asdas" value="Enviar" id="env"/>
+		<div id="caja"></div>
+	</form>
+	<script>
+		"use strict"
+		document.getElementById("form").onsubmit = verificar;
+		document.getElementById("formu").onsubmit = edad;
+		document.getElementById("nom").onfocus = ocultar;
+		document.getElementById("ape").onfocus = ocultar;
+		document.getElementById("ema").onfocus = ocultar;
+		function ocultar(){
+			document.getElementById("caja").style.display = "none";
+		}
+		function verificar (){
+			var nombre = document.getElementById("nom").value;
+			var apellido = document.getElementById("ape").value;
+			var email = document.getElementById("ema").value;
+			if(nombre =="" || apellido == "" || ema == ""){
+				document.getElementById("caja").style.display = "block";
+				document.getElementById("caja").innerHTML = "ALGUNO DE LOS DATOS ESTA VACIO";
+				return false;
+			}
+			if ( nombre.length < 3 || apellido.length < 3 || email.length < 3){
+				document.getElementById("caja").style.display = "block";
+				document.getElementById("caja").innerHTML ="ALGUNO DE LOS DATOS INGRESADOS TIENE MENOS DE 3 CARACTERES";
+				return false;
+			}
+			if(nombre.substr(0,3) == "   " || apellido.substr(0,3) == "   " || email.substr(0,3) == "   "){
+				document.getElementById("caja").style.display = "block";
+				document.getElementById("caja").innerHTML = "ALGUNO DE LOS DATOS TIENE 3 ESPACIOS";
+				return false;
+			}
+			var i, j ,k ;
+			for (i = 0; i < email.length ; i++){
+				var letra = email.substr(i,1);
+				if (letra == "@"){
+					j = 1;
+				}
+				if(letra == "."){
+					k = 1;
+				}
+			}
+			if ( j != 1 || k != 1){
+				document.getElementById("caja").style.display = "block";
+				document.getElementById("caja").innerHTML = "EL EMAIL HA SIDO MAL INGRESADO";
+				return false;
+			}
+			else return true;
+		}
+	</script>
+</body>
+</html>

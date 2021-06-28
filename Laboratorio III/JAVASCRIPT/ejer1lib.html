@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 1 del Libro</title>
+</head>
+<body>
+	<h1>Ejercicio 1 del libro</h1>
+	<label for="anio">Ingrese su año de nacimieno</label>
+	<input type="text" name="asda" id="anio"/>
+	<br>
+	<input type="button" id="calcu" value="Calcular"/>
+	<div id="caja"></div>
+
+	<script>
+		"use strict"
+		document.getElementById("calcu").onclick = cuanto;
+
+		function cuanto () {
+			var caja = document.getElementById("caja");
+			var x = parseInt(document.getElementById("anio").value);
+			x = x + 18;
+			alert("Usted cumplira 18 años en el año " + x );
+			 var nuevo = document.createElement("h2");
+			 nuevo.innerHTML = x; 
+			 caja.appendChild(nuevo);
+		}
+	</script>
+
+</body>
+</html>
